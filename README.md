@@ -4,6 +4,7 @@ This is to simulate a situation of E-Commerce platform generating streaming data
 This project is to practice real-time data pipeline using Apache Kafka to stream data, Apache Flink to process the data in real-time manner, and sink the data into Postgres and Elastic Search to monitor the data output.
 
 
+
 # System Architecture
 ![alt text](https://github.com/WinThitiwat/Flink-ECommerce/blob/main/system_architecture.png)
 
@@ -23,6 +24,10 @@ Sample generated data from Kafka topic:
 ```
 
 # ETL Data Pipeline Process:
+Notes
+- The data generator (Kafka producer) - [SalesTransactionGenerator/main.py](SalesTransactionGenerator/main.py)
+- The Flink data processor (Kafka consumer) - [FlinkCommerce/src/main/java/FlinkCommerce/DataStreamJob.java](FlinkCommerce/src/main/java/FlinkCommerce/DataStreamJob.java)
+
 1. Make sure the pipeline already subscribed the `financial_transaction` topic to stream the data from Kafka broker.
 2. Process the incoming streaming data using Apache Flink based on the business requirement.
 3. Sink the data into different Postgres tables, and Elastic Search for data visualization as followed.
